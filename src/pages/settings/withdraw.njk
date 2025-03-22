@@ -1,0 +1,103 @@
+---
+title: "Documentation - BigCash"
+layout: "layout.njk"
+permalink: "settings/withdraw.html"
+---
+
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">withdraw System Setup</h1>
+</div>
+<p>here are you will be able to setup withdraw settings:</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true">List</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false">Add New</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div
+        class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <!-- 1 tab -->
+        <img src="{{ relative_url('assets/images/withdraw/list.png') }}" height="250px" width="430px" alt=""/>
+        <p>
+            <b>Number1:</b>
+            to go to add new withdrawal method <br>
+            <b>Number2:</b>
+            to edit the exist withdrawal method <br>
+            <b>Number3:</b>
+            to active or inactive the target method
+        </p>
+    </div>
+    <div
+        class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <!-- 2 tab -->
+        <img src="{{ relative_url('assets/images/withdraw/add-1.png') }}" height="250px" width="430px" alt=""/>
+        <p>
+            <b>Number1:</b>
+            select the withdrawal method image, it will be used in withdrawal cards <br>
+            <b>Number2:</b>
+            select the withdrawal method name, EX: Paypal <br>
+            <b>Number3:</b>
+            select the withdrawal method currency name, EX: USD <br>
+            <b>Number4:</b>
+            what is exchange rate to USD, for our example will be : 1 <br>
+            <b>Number5:</b>
+            how long time to approve the withdraw in days EX: 7,
+        </p>
+        <hr/> <img src="{{ relative_url('assets/images/withdraw/add-2.png') }}" height="250px" width="430px" alt=""/>
+        <p>All amount in these fields are in your new method</p>
+        <p>
+            <b>Number1:</b>
+            Minium amount to withdraw, EX: 5 <br>
+            <b>Number2:</b>
+            Maximum amount to withdraw, EX: 500 <br>
+            <b>Number3, Number4:</b>
+            if withdrawal method requires charge amount fee you can choice one of these fields <br> fixed amount of charge or
+            percentage of the requested withdraw amount. <br>
+        </p>
+        <hr/> <img src="{{ relative_url('assets/images/withdraw/add-3.png') }}" height="250px" width="430px" alt=""/>
+        <p>
+            <b>Number1:</b>
+            if you want to add notes for users in withdraw process, EX: Enter your valid paypal mail,
+        </p>
+        <p>
+            if withdrawal method requires users to inter any data in withdraw process
+        </p>
+        <p>
+            <b>Number2:</b>
+            the input value, EX: email address <br>
+            <b>Number3:</b>
+            what is the type of the input,
+            <i>Text</i>,
+            <i>Textarea</i>,
+            <i>File</i>
+            <br>
+            <b>Number4:</b>
+            that is to define is it required to fill or not <br>
+            <b>Number5:</b>
+            to add more fields, <br> if you want to delete the fields: click on "X" button
+        </p>
+    </div>
+</div>

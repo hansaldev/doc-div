@@ -1,0 +1,173 @@
+---
+title: "Documentation - BigCash"
+layout: "layout.njk"
+permalink: "settings/mail.html"
+---
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">Mail System Setup</h1>
+</div>
+<p>
+    here are you will be able to setup site settings: <br/> From admin dashboard:
+    <code>/mail system/configs</code>
+</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true">PHP Mail</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false">SMTP</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="template-tab"
+            data-bs-toggle="tab"
+            href="#template"
+            role="tab"
+            aria-controls="template"
+            aria-selected="false">Templates</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div
+        class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <!-- 1 tab -->
+        <img src="{{ relative_url('assets/images/settings/php-mail.png') }}" alt="" height="350px" width="450px"/>
+        <p>there you can switch between the different mail systems</p>
+        <p>
+            For the first choice : PHP MAil <br/> the system will use the builtin PHP functionality to send mails <br/> If you chose
+            it, send test mail to be sure that is working. <br/> and you don't want to do any special action more.
+        </p>
+    </div>
+    <div
+        class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <!-- 2 tab -->
+        <h5>What is SMTP?</h5>
+        <p>
+            SMTP (Simple Mail Transfer Protocol) is a protocol for sending
+                    email messages between <br/> servers. Most email
+            systems that send mail over the Internet use SMTP to send messages from <br/>
+            one server to another, and to deliver messages to local mail clients like Microsoft Outlook
+            <br/> or Apple Mail.
+        </p>
+        <p>
+            SMTP is a communication protocol used to send and receive email
+                    messages. It is the backbone <br/> of the email
+            system and is responsible for relaying email messages from the sender's server <br/>
+            to the recipient's server, and then delivering them to the recipient's email inbox. SMTP is
+            <br/> a text-based protocol, <br/> which means that it uses plain text to communicate with email
+                    servers.
+        </p>
+        <img src="{{ relative_url('assets/images/settings/smtp-mail.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            <b>Number1: Host</b>: It is the server IP host or Domain: EX:
+                        mail.google.com <br/>
+            <b>Number2: Port</b>: It is communication port between the
+                        servers EX: 25, 578 <br/>
+            <b>Number3: Encryption</b>: It is communication between the
+                        servers, to check the connection is secure or not type EX: SSL,
+                        TLS
+            <br/>
+            <b>Number5: Username</b>: It is login authentication for the
+                        server EX: your google email "mymail.google.com" <br/>
+            <b>Number5: Password</b>
+            It is your password to login to the
+                    server EX: my password to google
+        </p>
+        <hr/>
+        <h5>Create SMTP from your host</h5>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/_pJt5zLxPtc"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <ol>
+            <li>Log into your cPanel account.</li>
+            <li>In the "Email" section, click on the "MX Entry" icon.</li>
+            <li>
+                Under "Add New Record", select "Remote Mail Exchanger" from
+                            the drop-down menu.
+            </li>
+            <li>
+                In the "Mail Server" field, enter the hostname or IP address
+                            of your SMTP server.
+            </li>
+            <li>Click "Add New Record" to save the changes.</li>
+            <li>In the "Email" section, click on the "Accounts" icon.</li>
+            <li>
+                Click on the "More" button next to the email account you want
+                            to use with SMTP.
+            </li>
+            <li>Click on the "Configure Email Client" button.</li>
+            <li>Click on the "Manual Settings" tab.</li>
+            <li>
+                Under "Outgoing Mail Server (SMTP)", enter the hostname or IP
+                            address of your SMTP server.
+            </li>
+            <li>
+                Enter your full email address and password for the email
+                            account.
+            </li>
+            <li>
+                Click "Save Changes" and you should be able to send emails
+                            using SMTP from your cPanel account.
+            </li>
+        </ol>
+        <br/> However, you can find many tutorials and videos on how to set up
+                SMTP from cPanel by searching <br/> for
+        it on a search engine like Google or YouTube. Additionally, you can also check the <br/>
+        documentation provided by your web hosting provider.
+    </div>
+    <div
+        class="tab-pane fade" id="template" role="tabpanel" aria-labelledby="template-tab">
+        <!-- 1 tab -->
+        <img src="{{ relative_url('assets/images/settings/mail-template.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            there you can search for mails that will be send to the users in
+                    most cases to edit
+        </p>
+        <p>Also you can change its status from be available or not</p>
+        <p>
+            <b>Number1:</b>
+            that is mail container template that will
+                    include all mails inside it. <br/>
+            <b>Number2:</b>
+            to change status of the email from being active
+                    or not <br/>
+            <b>Number3:</b>
+            to edit the mail template as shown below.
+        </p>
+        <hr/> <img src="{{ relative_url('assets/images/settings/mail-template-edit.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            we provide many shortcut codes you can use to embed in your
+                    mail, with its means<br/> most shortcut codes will
+            be
+            <i>Username</i>,
+            <i>Email</i>,
+            <i>Fullname</i>
+        </p>
+    </div>
+</div>

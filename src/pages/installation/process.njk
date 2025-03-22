@@ -1,0 +1,399 @@
+---
+title: "Documentation - Get Start"
+layout: "layout.njk"
+permalink: "installtion/process.html"
+---
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">Installation</h1>
+</div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+            aria-controls="home" aria-selected="true">Server</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+            aria-controls="profile" aria-selected="false">share hosting</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="vps_hosting-tab" data-bs-toggle="tab" href="#vps_hosting" role="tab"
+            aria-controls="vps_hosting" aria-selected="false">VPS Server</a>
+    </li>
+    <li class="nav-item" role="presentation">
+    <a class="nav-link" id="zard-tab" data-bs-toggle="tab" href="#zard" role="tab"
+        aria-controls="zard" aria-selected="false">Wizard</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h5>Server requirements:</h5>
+
+        <p>you will need to make sure your server meets the following requirements:</p>
+
+        <p>✓ PHP Version 7.4<br />
+            ✓ MySQL Version 5.7+</p>
+
+        <p>&nbsp;</p>
+
+        <h5>Extension required:</h5>
+
+        <p>you will need to make sure these extensions are enabled on your apache: ✓ BCMath PHP
+            Extension<br />
+            ✓ Ctype PHP Extension<br />
+            ✓ Fileinfo PHP extension<br />
+            ✓ JSON PHP Extension<br />
+            ✓ Mbstring PHP Extension<br />
+            ✓ OpenSSL PHP Extension<br />
+            ✓ PDO PHP Extension<br />
+            ✓ PDO_MYSQL PHP Extension<br />
+            ✓ Tokenizer PHP Extension<br />
+            ✓ XML PHP Extension<br />
+            ✓ CURL PHP Extension<br />
+            ✓ GD PHP Extension<br />
+            ✓ GMP PHP Extension</p>
+
+        <hr />
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="profile" role="tabpanel"
+        aria-labelledby="profile-tab">
+        <h5>Installation the script on shared hosting</h5>
+
+        <hr />
+        <h6><strong>Installation with Apache</strong></h6>
+
+        <hr />
+        <p><strong>Creating a new Database</strong></p>
+
+        <p>First thing you want to do before installing&nbsp;<strong>OfferLand</strong>&nbsp;is to
+            create a new
+            database on your mysql server.</p>
+
+        <p>If you already know how to do this/or have already created one just skip to the next step.
+        </p>
+
+        <p>Your hosting provider will most likely have&nbsp;<strong>phpMyAdmin</strong>&nbsp;as mysql
+            manager.
+        </p>
+
+        <p>If that is the case here is a step by step guide (if not the process will be very similar on
+            other
+            managers).</p>
+
+        <p>Login to your control panel, find and click phpMyAdmin link.</p>
+
+        <p>Click on the database tab in the top menu, enter any name for your database and click create.
+        </p>
+
+        <p><strong>Uploading Files</strong></p>
+
+        <p>After creating a database, unzip the file you downloaded and upload
+            <br> the&nbsp;<strong>contents</strong>&nbsp;of <strong>OfferLand&nbsp;</strong>folder to
+            your
+            server
+            <br> root, usually
+        </p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/www/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/html/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/httpdocs/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/public_html/</span></code>.</p>
+
+        <p>&nbsp;</p>
+
+        <p><strong><span style="background-color:#e74c3c">Important</span>:</strong>&nbsp;Always use a
+            desktop
+            application like&nbsp;<a href="https://filezilla-project.org/">FileZilla</a>&nbsp;to upload
+            files to
+            FTP as opposed to web based file managers to avoid issues with corrupted or not properly
+            uploaded
+            files.</p>
+
+        <p>&nbsp;</p>
+
+        <p><strong>Important:</strong>&nbsp;Make sure that<span
+                style="background-color:#f1c40f">&nbsp;</span><strong><span
+                    style="background-color:#f1c40f">.htaccess</span></strong>&nbsp;file got copied
+            properly
+            from the download to main MicroJob folder on your server.</p>
+
+        <hr />
+        <h6><strong>Launch the Installer</strong></h6>
+
+        <p>After you created a database and uploaded the files, simply open up your site in the browser
+        </p>
+
+        <p>(like&nbsp;<strong><a href="http://mysite.com/">http://mysite.com</a></strong>,</p>
+
+        <p>you will redirect to&nbsp;<strong><a
+                    href="http://mysite.com/install">http://mysite.com/install</a></strong>) and follow
+            on-screen instructions to complete the installation.</p>
+
+        <hr />
+        <h6><strong>Installation with Nginx</strong></h6>
+
+        <ol>
+            <li>Put all the MicroJob package files to your server root, usually</li>
+        </ol>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/www/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/html/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/httpdocs/</span></code>&nbsp;or</p>
+
+        <p><code><span style="background-color:#f1c40f">/path/to/public_html/</span></code></p>
+
+        <p>and set your server configuration like this: `root
+            &quot;<strong>/path/to/www/</strong>public&quot;;
+        </p>
+
+        <p><code>location <span style="background-color:#f1c40f">/ { try_files $uri $uri/ /index.php?$query_string; }</span></code>
+        </p>
+
+        <ol start="2">
+            <li>Then restart Nginx.</li>
+            <li>Create a MySQL database, add user to it with full permissions.</li>
+            <li>Go to the script&#39;s installation URL. For
+                example&nbsp;<code>http://mysite.com/install</code>
+            </li>
+            <li>And follow the web installation wizard.</li>
+        </ol>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="vps_hosting" role="tabpanel"
+        aria-labelledby="vps_hosting-tab">
+        <h5>Installation the script on VPS hosting</h5>
+
+        <hr />
+        <h6>Getting Started</h6>
+
+        <p>The first thing we will need is a Public VPS Server to host our PHP web application on.
+        </p>
+
+        <p>I will be using Digital Ocean to Get a VPS Server</p>
+
+        <p>Digital Ocean has already Configured Servers (LAMP) For hosting which makes it a lot
+            easier
+            as you
+            <br> will see later, so we don&rsquo;t need to install Apache, MySQL, PHP, or anything
+            else.
+        </p>
+
+        <p>So Just Signup and Create a VPS Droplet Machine and be sure to Select Lamp Server as your
+            Server
+            System.</p>
+
+        <hr />
+        <h6><strong>Reset Droplet Password</strong></h6>
+
+        <p>After you create the Droplet, you will receive an email containing the root default
+            password.
+        </p>
+
+        <p>Simply connect to your Droplet using&nbsp;<a href="https://www.putty.org/">Putty SSH
+                Client</a>&nbsp;and Reset the password.</p>
+
+        <hr />
+        <h6><strong>Upload PHP Files to Your Server</strong></h6>
+
+        <p>Connect to Your VPS Server using&nbsp;<a
+                href="https://winscp.net/eng/download.php">WinSCP,</a>&nbsp;and Update the PHP Files
+            to
+            the
+            server to this path: &ldquo;/var/www/html&rdquo;</p>
+
+        <p>In my case, I have a Zipped file, so I need to extract it. So again to Putty SSH CLient
+            and
+            Let&rsquo;s install the unzip utility using the following command:</p>
+
+        <hr />
+        <p>sudo apt-get install unzip</p>
+
+        <p>Clear putty screen to make in clean using the following command:</p>
+
+        <hr />
+        <p>clear</p>
+
+        <p>Change directory to /var/www/html using the following command:</p>
+
+        <hr />
+        <p>cd /var/www/html</p>
+
+        <p>Unzip the &ldquo;.zip&rdquo; file using the following command:</p>
+
+        <p><code>unzip main.zip</code></p>
+
+        <p>*Note: the file name may be different in your case, so
+            replace&nbsp;<em>main</em>&nbsp;with
+            your file
+            name.</p>
+
+        <p>Now, Move the latest folder content to the upper directory so it can be accessed directly
+            -&gt; use
+            WinSCP<br />
+            Just Drag and Drop using WinSCP<br />
+            Then delete the html folder, and rename &ldquo;<em>main</em>&rdquo; to html.<br />
+            In this way, the Your PHP files are in the html folder directly, so it can be accessed
+            directly
+            using your domain name.</p>
+
+        <hr />
+        <h6><strong>Start Installation</strong></h6>
+
+        <p>Now you can open your browser, and enter the Droplet IP and You will see the application
+            startup
+            page.</p>
+
+        <hr />
+        <h6><strong>Install PHP modules</strong></h6>
+
+        <p>Open Putty, and run the following commands to install PHP Modules:</p>
+
+        <p><code>sudo apt install php-curl</code><br />
+            <code>sudo apt install php-mbstring</code>
+        </p>
+
+        <p>*Restart apache service using the following command:</p>
+
+        <p><code>sudo service apache2 restart</code></p>
+
+        <hr />
+        <h6><strong>Create the Database</strong></h6>
+
+        <p>1- Open Putty SSH Client and run the following command:</p>
+
+        <p><code>mysql -u root -p</code></p>
+
+        <p>Login to MySQL with your root password</p>
+
+        <p>2- Create the database using the following command:</p>
+
+        <p><code>CREATE DATABASE _xero_;</code></p>
+
+        <p>3- Create a new user if root has not local accessible</p>
+
+        <p><code>CREATE USER &lsquo;xero&rsquo;@&rsquo;localhost&rsquo; IDENTIFIED BY &lsquo;Xero_db_pass123&rsquo;;</code>
+        </p>
+
+        <p><code>GRANT ALL PRIVILEGES ON * . * TO &lsquo;xero&rsquo;@&rsquo;localhost&rsquo;;</code>
+        </p>
+
+        <p><code>FLUSH PRIVILEGES;</code></p>
+
+        <hr />
+        <h6><strong>Setup cronjobs</strong></h6>
+
+        <p>Open WinSCP and got to /etc<br />
+            Open&nbsp;<strong>crontab</strong>&nbsp;file using the editor<br />
+            And paste all the jobs from Xerochat ( or your application) as explained in the video.
+        </p>
+
+        <p>Now, the last step is to point your domain name to your IP address in the DNS management
+            zone.</p>
+
+        <hr />
+        <h6><strong>Finish</strong></h6>
+
+        <p>You will go to your site domain&nbsp;<em>/install</em>&nbsp;to complete installation
+            wizard
+        </p>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="zard" role="tabpanel" 
+    aria-labelledby="zard-tab">
+        <h5>Wizard Installation</h5>
+
+        <p>After successful config and uploading the script to the host<br />
+            You will reach this part of the installation. In the browser&nbsp;<em>/install</em></p>
+
+        <h6>First Page.</h6>
+
+        <p><img style="height: 250px;width:420px" alt="image info"
+                src="{{ relative_url('assets/images/wizard-install/first-page.png') }}" />
+        </p>
+
+        <p>This welcome page Just click next.</p>
+
+        <hr />
+        <h6>Second Page.</h6>
+
+        <p><img style="height: 250px;width:420px" alt="image info"
+                src="{{ relative_url('assets/images/wizard-install/second-page.png') }}" />
+        </p>
+
+        <p>On this page, our system just checks All requirements for the script, from the PHP
+            version to
+            require
+            <br> extensions. If everything goes well, you just click on the Next button. If not, you
+            will need
+            to
+            <br> enable the required extensions from your Cpanel if you are
+            using&nbsp;<em>phpMyAdmin</em>&nbsp;or
+            <br> install it, if you are using a server host without Cpanel. Please, check the
+            installation
+            process
+            <br> for the shared host and VPS host for more pieces information.
+        </p>
+
+        <hr />
+        <h6>Third Page.</h6>
+
+        <p><img style="height: 250px;width:420px" alt="image info"
+                src="{{ relative_url('assets/images/wizard-install/third-page.png') }}" />
+        </p>
+
+        <p>On this page, Our system checks require installation files and permissions for them. As
+            in
+            the second
+            page, you need to fix any errors to be able to go next step.</p>
+
+        <hr />
+        <h6>Fouth Page.</h6>
+
+        <p><img style="height: 250px;width:420px" alt="image info"
+                src="{{ relative_url('assets/images/wizard-install/fourth-page.png') }}" />
+        </p>
+
+        <p>On this page, You are required to fill all fields, to start the installation.</p>
+
+        <p><strong>Database host</strong>: in most cases&nbsp;<em>localhost</em></p>
+
+        <p><strong>Database Name, User, and Password</strong>: for that you created in the shared
+            host
+            or VPS
+            host installing sections.</p>
+
+        <p><strong>Admin Username, Password, and Email</strong>&nbsp;credits for login as
+            Administrator.
+        </p>
+
+        <hr />
+        <h6>The last Page.</h6>
+
+        <p><img style="height: 250px;width:420px" alt="image info"
+                src="{{ relative_url('assets/images/wizard-install/last-page.png') }}" />
+        </p>
+
+        <p>If you entered all fields correctly in the preview step, you will redirect to the
+            congratulation page
+            for a successful installation.</p>
+
+        <hr />
+        <h6>last words</h6>
+
+        <p>your site is ready now to use. consider reading the next sections to understand more
+            about
+            the site
+            setup.</p>
+    </div>
+</div>

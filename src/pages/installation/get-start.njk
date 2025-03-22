@@ -1,0 +1,199 @@
+---
+title: "Documentation - Get Start"
+layout: "layout.njk"
+permalink: "installtion/getstart.html"
+---
+
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">Requirements</h1>
+</div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+            aria-controls="home" aria-selected="true">Domain</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+            aria-controls="profile" aria-selected="false">Share Hosting</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="vps_hosting-tab" data-bs-toggle="tab" href="#vps_hosting" role="tab"
+            aria-controls="vps_hosting" aria-selected="false">VPS Server</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="zard-tab" data-bs-toggle="tab" href="#zard" role="tab"
+            aria-controls="zard" aria-selected="false">FAQ</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <h5>Get Domain</h5>
+
+        <p>Getting a Domain is as simple as eating a piece of chocolate cake. you need to go to any
+            Domain
+            <br> registrar company like Godaddy, Hostinger, Freenom, Namecheap&hellip;. and Buy a Domain
+            Name,
+            you
+            <br> can even get one for 1$ per year. I do recommend getting a domain name that reflects
+            your
+            business.
+            <br> and if you already have one, as I think so, you can just skip this.
+        </p>
+
+        <h6>Namecheap</h6>
+
+        <p>This link will help you to register a new domain in&nbsp;<a
+                href="https://www.namecheap.com/support/knowledgebase/article.aspx/10072/35/how-to-register-a-domain-name/">namecheap</a>
+        </p>
+        <h6>To register Godday domain</h6>
+
+        <p>This link will help you to register a new domain in&nbsp;<a
+                href="https://www.youtube.com/watch?v=RN3i1sc2_u8">Godaddy</a></p>
+        <h6>For Hostinger domain</h6>
+
+        <p>This link will help you to register a new domain in&nbsp;<a
+                href="https://www.hostinger.com/tutorials/how-to-buy-a-domain-name">Hostinger</a></p>
+        <h6>Freenom Domain</h6>
+
+        <p>This link will help you to register a new domain in&nbsp;<a
+                href="https://blog.short.io/freenom-registrar/">Freenom</a></p>
+        <p>There are other companies for buying domains and also there are some hosting services that
+            offer a
+            free domain when you buy VPS or share hosting from them.</p>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <h5>Get Shared Hosting.</h5>
+
+        <p>When the time comes to choose where to host your website you&rsquo;re going to have a ton of
+            options
+            at your disposal.</p>
+
+        <p>Beyond deciding which company to host with, you&rsquo;ll also have to decide what kind of
+            hosting
+            package suits you best.</p>
+
+        <p>Shared hosting is one of the most popular hosting options for those who are building out
+            their first
+            websites. For more details about&nbsp;<a
+                href="https://www.hostgator.com/blog/what-is-shared-hosting/">shared hosting</a></p>
+
+        <h5>Top Shared hosting companies</h5>
+
+        <h6>Bluehost - Best web hosting overall.</h6>
+        <p><a href="https://www.bluehost.com/hosting/shared#pricing-cards">get shared hosting from
+                Bluehost</a>
+        </p>
+
+        <h6>Hostinger - Best WordPress hosting.</h6>
+        <p><a href="https://www.hostinger.com/tutorials/how-to-choose-web-hosting-plan">How to Choose
+                the Right
+                One for You from Hostinger</a></p>
+
+        <h6>HostGator - Best shared web hosting.</h6>
+        <p><a href="https://www.hostgator.com/web-hosting">visit HostGator Site</a></p>
+
+        <h6>GoDaddy - Best multilingual support web host.</h6>
+        <p><a href="https://ae.godaddy.com/hosting/web-hosting">Do hosting on GoDaddy?</a>
+            <br> There are many other shared hosting companies out there, But these are the most trusted
+            for
+            security,
+            speed, and compatibility.
+        </p>
+    </div>
+    <div class="tab-pane fade" id="vps_hosting" role="tabpanel" aria-labelledby="vps_hosting-tab">
+        <h5>Get VPS Hosting.</h5>
+
+        <p>When the time comes to choose where to host your website you&rsquo;re going to have a ton of
+            options
+            at your disposal.</p>
+
+        <p>Beyond deciding which company to host with, you&rsquo;ll also have to decide what kind of
+            hosting
+            package suits you best.</p>
+
+        <p>VPS hosting is an other one of the most popular hosting options for those who are building
+            out their
+            websites but expects growing traffic in the future.</p>
+
+        <p>For more details about&nbsp;<a href="https://hostinger.com/tutorials/what-is-vps-hosting">VPS
+                hosting</a></p>
+
+        <h6>VPS hosting</h6>
+
+        <p>1-&nbsp;<a href="https://www.hostinger.com/vps-hosting">Hostinger</a>&mdash; Best cheap VPS
+            hosting
+            plans</p>
+
+        <p>2-&nbsp;<a
+                href="https://www.kamatera.com/Solutions/545/VPS_Hosting">Kamatera</a>&nbsp;&mdash;
+            Best
+            VPS hosting for instant scaling</p>
+
+        <p>3-&nbsp;<a
+                href="https://www.inmotionhosting.com/managed-vps-hosting">InMotion</a>&nbsp;&ndash;
+            Most
+            reliable uptime</p>
+
+        <p>4-&nbsp;<a href="https://www.bluehost.com/hosting/vps/">Bluehost</a>&nbsp;&ndash; Most
+            streamlined
+            upgrade from shared hosting</p>
+
+        <p>5-&nbsp;<a href="https://www.liquidweb.com/products/vps/">Liquid Web</a>&nbsp;&ndash; Best
+            hands-off
+            VPS hosting with high memory and storage</p>
+
+        <p>Please, consider to read well about any site, you will choose for your site. Don&#39;t only
+            looking
+            for cheap,</p>
+    </div>
+    <div class="tab-pane fade" id="zard" role="tabpanel" aria-labelledby="zard-tab">
+        <h5>Most common question related to hosting</h5>
+
+        <h6>What is the best choice for buying domains?</h6>
+
+        <p>It is up to you, You can buy the domain from any company that I mentioned to it in the domain
+            section. But the most popular users, buy the hosting first and get the domain for free for 1
+            year.
+        </p>
+
+        <hr />
+        <h6>What is the difference between Share hosting and VPS hosting?</h6>
+
+        <p>The main difference between shared hosting and VPS is that with shared hosting you get a
+            package
+            already configured and ready to use, limiting your customization options, while with VPS
+            you&rsquo;re free to set it up however you like. The VPS setup does require some technical
+            knowledge
+            though, so it might not be the best choice for beginners.</p>
+
+        <p>&nbsp;</p>
+
+        <p>To Know which best choice for you, consider reading this Post&nbsp;<a
+                href="https://www.hostinger.com/tutorials/shared-hosting-vs-vps-hosting/">Tutorial</a>
+        </p>
+
+        <hr />
+        <h6>Do you provide the full hosting solution?</h6>
+
+        <p>Unfortunately, Not. You have to buy your hosting and domain by yourself, but consider
+            checking its
+            compatibility with the script.</p>
+
+        <hr />
+        <h6>I don&#39;t have cPanel, What should I do?</h6>
+
+        <p>Nothing to worry about, Our system will work with any control panel but cPanel is easy to
+            manage, for
+            that we recommend cPanel based hosting. Also, Our free Support is limited to cPanel based
+            hosting
+            only.</p>
+    </div>
+</div>
+

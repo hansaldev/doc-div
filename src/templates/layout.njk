@@ -1,0 +1,31 @@
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{{ title }}</title>
+        <link href="{{ relative_url('assets/css/styles.css') }}" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+         {% include "header.njk" %}
+        <div id="layoutSidenav">
+            {% include "sidebar.njk" %}
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                       {{ content | safe }} 
+                    </div>
+                </main>
+         {% include "footer.njk" %}
+    </body>
+</html>

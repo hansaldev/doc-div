@@ -1,0 +1,246 @@
+---
+title: "Documentation - BigCash"
+layout: "layout.njk"
+permalink: "settings/site.html"
+---
+
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">Site Setup settings</h1>
+</div>
+<p>here are you will be able to setup site settings:</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true">General</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false">Captcha</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="vps_hosting-tab"
+            data-bs-toggle="tab"
+            href="#vps_hosting"
+            role="tab"
+            aria-controls="vps_hosting"
+            aria-selected="false">Features</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="zard-tab"
+            data-bs-toggle="tab"
+            href="#zard"
+            role="tab"
+            aria-controls="zard"
+            aria-selected="false">Language</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div
+        class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <!-- 1 tab -->
+        <img src="/assets/images/settings/general.png" height="250px" width="430px" alt=""/>
+        <h5>Basic Setting</h5>
+        <p>
+            The site name and description are important elements that will
+                be used in multiple places <br/> throughout the
+            frontend pages, in emails, and other places in the website.
+        </p>
+        <p>
+            <strong>Site Name:</strong>
+            This name will be used in various
+                places in the frontend <br/> pages, emails, and other locations on the website.
+        </p>
+        <p>
+            <strong>Site Description:</strong>
+            This description will be used
+                in the hero section of <br/> the frontend page, in emails, and other places in the
+            website to provide a summary of <br/> what the site is about.
+        </p>
+        <hr/> <img src="/assets/images/settings/seo.png" height="250px" width="430px" alt=""/>
+        <h5>Seo Settings</h5>
+        <p>
+            These setting is used in the head of the frontend pages for SEO
+                meta tags
+        </p>
+        <hr/> <img src="/assets/images/settings/social.png" height="250px" width="430px" alt=""/>
+        <h5>Social Setting</h5>
+        <p>
+            These settings are used in the head of the frontend pages, that
+                will be used <br/> when someone shares your site's
+            link in social media sites.
+        </p>
+        <hr/> <img src="/assets/images/settings/logo.png" height="250px" width="430px" alt=""/>
+        <h5>Logo and Favicon</h5>
+        <p>
+            <b>Logo</b>: this image is used in navbar of the site, emails,
+                    and others, you can use
+            <a href="https://www.canva.com/" target="_blank">Canva</a>
+            to
+                create custom one <br/> or hire one from
+            <a href="https://www.fiverr.com/" target="_blank">Fiverr.com</a>
+        </p>
+        <p>
+            <b>Favicon</b>: this image will be appeared in the browser tab. <br/> you can generate on from
+            <a href="https://favicon.io/" target="_blank">Favicon Generator</a>
+        </p>
+    </div>
+    <div
+        class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <!-- 2 tab -->
+        <p>
+            In this section, we will set up our site captcha. We provide
+                three types of captcha for more security.
+        </p>
+        <img src="/assets/images/settings/captcha.png" height="350px" width="430px" alt=""/>
+        <h5>First Step</h5>
+        <p>
+            choose if you want to enable captcha on the login and register
+                process.
+        </p>
+        <p>choose your default captcha to be used.</p>
+        <hr/>
+        <h6>google captcha.</h6>
+        <p>
+            go to&nbsp;<a href="https://www.google.com/recaptcha/admin/">google captcha console</a>
+        </p>
+        <ol>
+            <li>click on the&nbsp;<em>(+)</em>&nbsp;icon.</li>
+            <li>Fill the fields</li>
+            <li>check captcha v2</li>
+            <li>submit Send</li>
+            <li>you will redirect to APIs keys</li>
+            <li>
+                copy captcha them to the google captcha setting in the admin
+                        setting for google Recaptcha
+            </li>
+        </ol>
+        <hr/>
+        <h5>Hcaptcha Setup.</h5>
+        <p>
+            go to&nbsp;<a href="https://hcaptcha.com/">Hcaptcha site</a>.
+        </p>
+        <ol>
+            <li>Create a new account,</li>
+            <li>
+                from your dashboard, click on&nbsp;<em>
+                    <strong>sites</strong>
+                </em>&nbsp;at the head of the site.
+            </li>
+            <li>
+                Click on&nbsp;<em>
+                    <strong>New Site</strong>
+                </em>.
+            </li>
+            <li>Fill hostnames field.</li>
+            <li>
+                submit&nbsp;<em>
+                    <strong>Add new domain</strong>
+                </em>.
+            </li>
+            <li>
+                Then&nbsp;<em>
+                    <strong>Save</strong>
+                </em>.
+            </li>
+            <li>You will be redirected to your site&#39;s list.</li>
+            <li>
+                click on&nbsp;<em>
+                    <strong>Setting</strong>
+                </em>&nbsp;beside your site.
+            </li>
+            <li>copy the captcha public key to your setting</li>
+            <li>
+                Click on the image at the top of the site, and click on
+                        settings.
+            </li>
+            <li>
+                copy your private key to your setting in the Hcaptcha setting.
+            </li>
+        </ol>
+    </div>
+    <div
+        class="tab-pane fade" id="vps_hosting" role="tabpanel" aria-labelledby="vps_hosting-tab">
+        <!-- 3 tab -->
+        <img src="/assets/images/settings/manage.png" alt="" height="350px" width="450px"/>
+        <p>
+            In this section, you have control over some of the site
+                features.
+        </p>
+        <ol>
+            <li>the global Site currency.</li>
+            <li>Give the currency thumb.</li>
+            <li>Enable the Registration process.</li>
+            <li>
+                Enable Force Https Request: to make your site more secure.
+            </li>
+            <li>
+                Enable Email verification, To require the user to verify their
+                        email before login into the dashboard.
+            </li>
+            <li>
+                Enable Email Notification system: It will send users notifications via email about some events on the site like approve
+                payment or withdrawal and so on.
+            </li>
+        </ol>
+        <p>
+            The last two require setup before enabling them consider reading
+                their setup sections.
+        </p>
+        <ol start="8">
+            <li>
+                Enable force strong password: This forces users to use a strong password for registrations 2 letters, 2 specific
+                characters, and at least 8 characters.
+            </li>
+        </ol>
+    </div>
+    <div
+        class="tab-pane fade" id="zard" role="tabpanel" aria-labelledby="zard-tab">
+        <!-- 4 tabs -->
+        <img src="{{ relative_url('assets/images/settings/lang.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            <b>Number 1</b>: to create new language as will be shown
+                    below<br/>
+            <b>Number 2</b>: to change the language value as will be shown
+                    below<br/>
+            <b>Number 3</b>: to change the language name and icon <br/>
+            <b>Number 4</b>: to delete the language from the list <br/>
+        </p>
+        <hr/> <img src="{{ relative_url('assets/images/settings/add-lang.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            All you need to write the language name, for ex: English <br/> next select the language icon and country,
+        </p>
+        <hr/> <img src="{{ relative_url('assets/images/settings/tran-lang.png') }}" alt="" height="350px" width="450px"/>
+        <p>
+            you can search for specific language key and click enter then
+                update its value <br/> depends on the language your
+            choice. <br/> for ex: translate Arabic <br/> Login : "تسجيل الدخول"
+        </p>
+        <hr/>
+        <p>
+            In the end: for change the language status, is it visible or not <br/> and is it RTL status <br/> you can use the medium
+            buttons "ON" and "Off"
+        </p>
+    </div>
+</div>

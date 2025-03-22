@@ -1,0 +1,67 @@
+---
+title: "Documentation - BigCash"
+layout: "layout.njk"
+permalink: "settings/referral.html"
+---
+{% macro relative_url(path) %}
+  {% set depth = page.url | split('/') | length - 2 %}
+  {% set prefix = "../"|repeat(depth) %}
+  {{ prefix ~ path }}
+{% endmacro %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h6">Referral System Setup</h1>
+</div>
+<p>here are you will be able to setup Referral settings:</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true">Configs</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false">Page</a>
+    </li>
+</ul>
+<div class="tab-content mt-3" id="myTabContent">
+    <div
+        class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <!-- 1 tab -->
+        <img src="{{ relative_url('assets/images/settings/ref.png') }}" height="250px" width="430px" alt=""/>
+        <p>There are two types of referral system you can give users to earn from <br> inventing users and make deposits.
+        </p>
+        <p>
+            <b>Number1:</b>
+            to disable and enable the referral system<br>
+            <b>Number2:</b>
+            Enter the number of referral levels <br>
+            <b>Number3:</b>
+            Click to generate <br>
+        </p>
+    </div>
+    <div
+        class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <!-- 2 tab -->
+        <img src="{{ relative_url('assets/images/settings/ref-page.png') }}" height="250px" width="430px" alt=""/>
+        <p>
+            you can customize the page of referral system <br> that will be appeared to the users. <br> for adding html content you
+            can use
+            <b>HTML</b>
+            icon. <br> if you pasted content from other site, you should use
+            <b>Remove Format</b>
+            icon <br> to make it fixed with the site layout.
+        </p>
+    </div>
+</div>
